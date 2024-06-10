@@ -40,13 +40,14 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-          <div class="modal-body">
-            <p>Title: <span id="todo-title"></span></p>
-            <p>Description: <span id="todo-description"></span></p>
-            <p>Deadline: <span id="todo-deadline"></span></p>
-          </div>
+        <form class="modal-body">
+          <p>Title: <input type="text" class="form-control" id="todo-title" placeholder="Todo title..."></p>
+          <p>Description: <textarea rows="3" class="form-control mt-3" id="todo-description"
+              placeholder="Todo description..."></textarea></p>
+          <p>Deadline: <input type="date" class="form-control" id="todo-deadline" placeholder="Todo deadline..."></p>
+        </form>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary" onclick=newTodo()>Save changes</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -92,7 +93,7 @@
         document.getElementById("todo-deadline").value = currentTodo.deadline;
 
         var saveButton = document.querySelector("#todoModal .modal-footer .btn-primary");
-        saveButton.onclick = function() { saveTodo(todoID); };
+      saveButton.onclick = function() { saveTodo(todoID); };
       });
     });
   }
